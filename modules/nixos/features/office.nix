@@ -11,7 +11,11 @@
 
   config = lib.mkIf config.my.office.enable {
     environment.systemPackages = with pkgs; [
-      # Add apps here, e.g. libreoffice
+      libreoffice
+      # Spell checking in LibreOffice
+      hunspell
+      hunspellDicts.de_DE
+      hunspellDicts.en_US
     ];
   };
 }

@@ -11,7 +11,8 @@
 
   config = lib.mkIf config.my.development.enable {
     environment.systemPackages = with pkgs; [
-      # Add apps here, e.g. vscode
+      vscode
+      nixd # Nix language server, for editing this config
     ];
   };
 }

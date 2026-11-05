@@ -14,7 +14,7 @@
       # Add apps here, e.g. chromium
     ];
 
-    # Some apps are set up with an option instead of a package, e.g.:
-    # programs.firefox.enable = true;
+    # Some apps are set up with an option instead of a package
+    programs.firefox.enable = true;
   };
 }

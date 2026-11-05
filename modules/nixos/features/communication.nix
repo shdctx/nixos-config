@@ -11,7 +11,8 @@
 
   config = lib.mkIf config.my.communication.enable {
     environment.systemPackages = with pkgs; [
-      # Add apps here, e.g. discord
+      discord
+      thunderbird # e-mail
     ];
   };
 }

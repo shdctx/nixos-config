@@ -11,10 +11,10 @@
 
   config = lib.mkIf config.my.gaming.enable {
     environment.systemPackages = with pkgs; [
-      # Add apps here, e.g. heroic
+      mangohud # FPS and performance overlay
     ];
 
-    # Some apps are set up with an option instead of a package, e.g.:
-    # programs.steam.enable = true;
+    # Some apps are set up with an option instead of a package
+    programs.steam.enable = true;
   };
 }

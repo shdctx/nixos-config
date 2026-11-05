@@ -11,7 +11,8 @@
 
   config = lib.mkIf config.my.media.enable {
     environment.systemPackages = with pkgs; [
-      # Add apps here, e.g. mpv
+      vlc # video player
+      spotify
     ];
 
     # Some apps are set up with an option instead of a package, e.g.:
