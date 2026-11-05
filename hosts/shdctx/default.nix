@@ -15,6 +15,15 @@
     };
 
     desktop.hyprland.enable = true;
+
+    # App groups. Add the apps themselves in modules/nixos/features/<group>.nix
+    browser.enable = true;
+    communication.enable = true;
+    development.enable = true;
+    gaming.enable = true;
+    media.enable = true;
+    office.enable = true;
+    virtualization.enable = false;
   };
 
   # Check the btrfs file system for errors once a month
