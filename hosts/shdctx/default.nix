@@ -7,6 +7,12 @@
 
   my = {
     user.name = "shdctx";
+
+    hardware = {
+      cpu.amd.enable = true; # Ryzen 5 9600X
+      gpu.amd.enable = true; # Radeon RX 9070 XT
+      bluetooth.enable = false;
+    };
   };
 
   # Check the btrfs file system for errors once a month
