@@ -1,0 +1,3 @@
+# Build output links from `nix build`
+result
+result-*
