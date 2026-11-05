@@ -13,6 +13,8 @@
       gpu.amd.enable = true; # Radeon RX 9070 XT
       bluetooth.enable = false;
     };
+
+    desktop.hyprland.enable = true;
   };
 
   # Check the btrfs file system for errors once a month
