@@ -24,6 +24,9 @@
     media.enable = true;
     office.enable = true;
     virtualization.enable = false;
+
+    # Pull this repository on every boot and build it for the next boot
+    autoUpdate.enable = true;
   };
 
   # Check the btrfs file system for errors once a month
