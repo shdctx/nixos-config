@@ -9,9 +9,9 @@
     user.name = "shdctx";
 
     hardware = {
-      cpu.amd.enable = true; # Ryzen 5 9600X
-      gpu.amd.enable = true; # Radeon RX 9070 XT
-      bluetooth.enable = false;
+      cpu.amd.enable = true;
+      gpu.amd.enable = true;
+      bluetooth.enable = true;
     };
 
     desktop.hyprland.enable = true;
@@ -25,6 +25,9 @@
     media.enable = true;
     office.enable = true;
     virtualization.enable = false;
+    remote-desktop.enable = true;
+    vpn.enable = true;
+
 
     # Pull this repository on every boot and build it for the next boot
     autoUpdate.enable = true;
