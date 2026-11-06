@@ -11,7 +11,8 @@
 
   config = lib.mkIf config.my.communication.enable {
     environment.systemPackages = with pkgs; [
-      discord
+      (discord.override { withVencord = true; })
+      teamspeak6-client # teamspeak
       thunderbird # e-mail
     ];
   };
