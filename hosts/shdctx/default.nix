@@ -19,6 +19,7 @@
     # App groups. Add the apps themselves in modules/nixos/features/<group>.nix
     browser.enable = true;
     communication.enable = true;
+    cybersecurity.enable = true;
     development.enable = true;
     gaming.enable = true;
     media.enable = true;

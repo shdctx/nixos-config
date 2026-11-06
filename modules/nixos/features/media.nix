@@ -15,6 +15,11 @@
       spotify
     ];
 
+    # Browser extensions (installed in Brave, see browser.nix)
+    programs.chromium.extensions = [
+      "fphegifdehlodcepfkgofelcenelpedj" # 7TV Nightly
+    ];
+
     # Some apps are set up with an option instead of a package, e.g.:
     # programs.obs-studio.enable = true;
   };
