@@ -25,7 +25,6 @@ jobs:
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Formatting (nixfmt), unused code (deadnix) and evaluating every host
       - name: nix flake check
         run: nix flake check --no-update-lock-file --print-build-logs
 
@@ -49,36 +48,12 @@ jobs:
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - uses: cachix/cachix-action@v17
+        with:
+          name: shdctx
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
       - name: Build system
         run: >-
           nix build --no-update-lock-file --print-build-logs
-          --out-link result
           ".#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel"
-
-      # On pull requests (like Renovate's updates), list the package changes
-      # in the run summary
-      - name: Check out base branch
-        if: github.event_name == 'pull_request'
-        uses: actions/checkout@v7
-        with:
-          ref: ${{ github.base_ref }}
-          path: base
-
-      - name: Build base branch
-        id: base
-        if: github.event_name == 'pull_request'
-        continue-on-error: true
-        run: >-
-          nix build --no-update-lock-file
-          --out-link result-base
-          "./base#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel"
-
-      - name: Summarize package changes
-        if: github.event_name == 'pull_request' && steps.base.outcome == 'success'
-        run: |
-          {
-            echo "## Package changes on \`${{ matrix.host }}\`"
-            echo '```'
-            nix run --inputs-from . nixpkgs#nvd -- diff result-base result
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
