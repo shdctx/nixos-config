@@ -28,7 +28,6 @@
     remote-desktop.enable = true;
     vpn.enable = true;
 
-
     # Pull this repository on every boot and build it for the next boot
     autoUpdate.enable = true;
   };
