@@ -7,8 +7,7 @@
   },
   "lockFileMaintenance": {
     "enabled": true,
-    "automerge": true,
-    "schedule": ["before 6am"]
+    "automerge": true
   },
   "platformAutomerge": false,
   "packageRules": [
