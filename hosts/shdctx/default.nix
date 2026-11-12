@@ -24,6 +24,7 @@
     gaming.enable = true;
     media.enable = true;
     office.enable = true;
+    printing3d.enable = true;
     virtualization.enable = false;
     remote-desktop.enable = true;
     vpn.enable = true;
